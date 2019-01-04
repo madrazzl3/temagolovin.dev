@@ -1,9 +1,24 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 
-import Header from './header'
-import './layout.css'
+import './layout.css';
+
+const Content = styled.div`
+  display: flex;
+  margin: 0 auto;
+  max-width: 960px;
+  padding-top: 0;
+  height: 100vh;
+
+  h1,
+  h3,
+  a {
+    font-family: Hack, monospace;
+    margin: 0;
+  }
+`;
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -17,25 +32,18 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
-        <div
-          style={{
-            display: `flex`,
-            margin: `0 auto`,
-            maxWidth: 960,
-            paddingTop: 0,
-            height: `100vh`,
-          }}
-        >
-          {children}
-        </div>
-      </>
+      <Content>
+        <Helmet>
+          <link
+            rel="stylesheet"
+            href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css"
+          />
+          <title>{data.site.siteMetadata.title}</title>
+        </Helmet>
+        {children}
+      </Content>
     )}
   />
-)
+);
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
+export default Layout;

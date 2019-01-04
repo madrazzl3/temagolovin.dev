@@ -1,16 +1,11 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Layout from '../components/layout'
+import React from 'react';
+import Layout from '../components/layout';
+import Bio from '../components/Bio';
 
 const IndexPage = () => (
   <Layout>
-    <div style={{
-      alignSelf: `center`,
-      }}>
-      <h1>Artem Golovin <small>🌊</small></h1>
-      <h3>Software Developer</h3>
-    </div>
+    <Bio />
   </Layout>
 );
 
-export default IndexPage
+export default IndexPage;
