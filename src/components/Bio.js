@@ -43,7 +43,6 @@ const Bio = () => (
       <ListLink to="https://soundcloud.com/awave1/tracks">
         /soundclound
       </ListLink>
-      <ListLink to="https://awave1.github.io/notes/">/notes</ListLink>
     </List>
   </Wrapper>
 );
