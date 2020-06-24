@@ -11,7 +11,12 @@ import './waves.css';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #212121;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(33, 33, 33, 1) 67%,
+    rgba(33, 33, 33, 0.91) 100%
+  );
   min-height: 100vh;
 
   * {
