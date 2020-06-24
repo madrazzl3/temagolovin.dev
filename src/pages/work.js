@@ -1,10 +1,10 @@
-import React from 'react';
-import Layout from '../components/layout';
+import React from "react";
+import Page from "../components/Page";
 
 export default function WorkPage() {
   return (
-    <Layout>
+    <Page>
       <h1>Work</h1>
-    </Layout>
+    </Page>
   );
 }

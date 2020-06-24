@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import { WaveEmoji } from './Waves';
-import { List, ListLink, Link } from './List';
+import React from "react";
+import styled from "styled-components";
+import { WaveEmoji } from "./Waves";
+import { List, ListLink, Link } from "./List";
 
 const Nav = styled.nav`
   display: flex;
@@ -33,12 +33,16 @@ export function Toolbar() {
   return (
     <header>
       <Nav>
-        <Link className="home" to="/">
+        <Link useRouter className="home" to="/">
           <WaveEmoji className="wave" />
         </Link>
         <NavLinks>
-          <ListLink to="/about">About</ListLink>
-          <ListLink to="/work">Work</ListLink>
+          <ListLink useRouter to="/about">
+            About
+          </ListLink>
+          <ListLink useRouter to="/work">
+            Work
+          </ListLink>
         </NavLinks>
       </Nav>
     </header>

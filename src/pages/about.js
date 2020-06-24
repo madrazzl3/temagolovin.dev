@@ -1,10 +1,10 @@
-import React from 'react';
-import Layout from '../components/layout';
-import { List, ListLink } from '../components/List';
+import React from "react";
+import Page from "../components/Page";
+import { List, ListLink } from "../components/List";
 
 export default function AboutPage() {
   return (
-    <Layout>
+    <Page>
       <h1>About</h1>
 
       <List>
@@ -17,6 +17,6 @@ export default function AboutPage() {
           /soundclound
         </ListLink>
       </List>
-    </Layout>
+    </Page>
   );
 }

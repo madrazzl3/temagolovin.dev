@@ -1,12 +1,11 @@
-import React from 'react';
-import Layout from '../components/layout';
-import { Waves, WaveEmoji } from '../components/Waves';
+import React from "react";
+import Page from "../components/Page";
 
 export default function IndexPage() {
   return (
-    <Layout>
+    <Page>
       <h1>Artem Golovin</h1>
       <h3>Software Developer</h3>
-    </Layout>
+    </Page>
   );
 }

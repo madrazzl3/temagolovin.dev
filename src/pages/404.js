@@ -1,19 +1,19 @@
-import React from 'react';
-import Layout from '../components/layout';
+import React from "react";
+import Page from "../components/Page";
 
 const NotFoundPage = () => (
-  <Layout>
+  <Page>
     <small
       style={{
-        margin: '0 auto',
-        alignSelf: 'center',
-        fontFamily: 'Hack, monospace',
-        letterSpacing: '10px',
+        margin: "0 auto",
+        alignSelf: "center",
+        fontFamily: "Hack, monospace",
+        letterSpacing: "10px",
       }}
     >
       emptyspace
     </small>
-  </Layout>
+  </Page>
 );
 
 export default NotFoundPage;
