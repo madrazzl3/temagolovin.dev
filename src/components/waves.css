@@ -1,0 +1,37 @@
+/* Adapted from: https://codepen.io/goodkatz/pen/LYPGxQz?editors=1100 */
+.waves {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.parallax > use {
+  animation: move-forever 40s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+}
+
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+}
+
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+}
+
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+}
+
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}

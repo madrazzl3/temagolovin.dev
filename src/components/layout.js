@@ -1,16 +1,22 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+import { Toolbar } from './Toolbar';
+import { Waves } from './Waves';
 
 import './layout.css';
+import './waves.css';
 
-const Content = styled.div`
+const Wrapper = styled.div`
   display: flex;
-  margin: 0 auto;
-  max-width: 960px;
-  padding-top: 0;
-  height: 100vh;
+  flex-direction: column;
+  background-color: #212121;
+  min-height: 100vh;
+
+  * {
+    color: #ffffff;
+  }
 
   h1,
   h3,
@@ -20,7 +26,11 @@ const Content = styled.div`
   }
 `;
 
-const Layout = ({ children }) => (
+const Content = styled.div`
+  flex-grow: 1;
+`;
+
+const Layout = ({ children, renderAfter }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -31,8 +41,8 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
-      <Content>
+    render={(data) => (
+      <Wrapper>
         <Helmet>
           <link
             rel="stylesheet"
@@ -40,8 +50,12 @@ const Layout = ({ children }) => (
           />
           <title>{data.site.siteMetadata.title}</title>
         </Helmet>
-        {children}
-      </Content>
+        <div style={{ maxWidth: '760px', width: '100%', margin: '0 auto' }}>
+          <Toolbar />
+          <Content>{children}</Content>
+        </div>
+        <Waves />
+      </Wrapper>
     )}
   />
 );
