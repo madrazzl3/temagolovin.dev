@@ -55,7 +55,7 @@ function Link({ to, children, useRouter, className }) {
 function ListLink({ to, children, useRouter }) {
   return (
     <li style={{ margin: "5px 0", padding: "5px 0" }}>
-      <Link to={to} useRouter>
+      <Link to={to} useRouter={!!useRouter}>
         {children}
       </Link>
     </li>
