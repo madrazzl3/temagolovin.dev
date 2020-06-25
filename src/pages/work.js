@@ -5,6 +5,7 @@ export default function WorkPage() {
   return (
     <Page>
       <h1>Work</h1>
+      <p>in progress... 🚧</p>
     </Page>
   );
 }
