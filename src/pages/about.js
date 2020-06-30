@@ -6,6 +6,14 @@ export default function AboutPage() {
   return (
     <Page>
       <h1>About</h1>
+      <p>
+        Here are links to my social media. Come say hi! (and follow my
+        SoundCloud{" "}
+        <span rel="img" alt="One Hundred">
+          💯
+        </span>
+        )
+      </p>
 
       <List>
         <ListLink to="https://github.com/awave1">/github</ListLink>

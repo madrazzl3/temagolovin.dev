@@ -32,7 +32,7 @@ const Content = styled.div`
 
 const Page = ({ children }) => (
   <Wrapper>
-    <div style={{ maxWidth: "760px", width: "100%", margin: "0 auto" }}>
+    <div style={{ maxWidth: "760px", width: "85%", margin: "0 auto" }}>
       <Toolbar />
       <Content>{children}</Content>
     </div>
