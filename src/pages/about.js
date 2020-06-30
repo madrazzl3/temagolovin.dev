@@ -22,7 +22,7 @@ export default function AboutPage() {
         </ListLink>
         <ListLink to="https://twitter.com/awaveawave">/twitter</ListLink>
         <ListLink to="https://soundcloud.com/awave1/tracks">
-          /soundclound
+          /soundcloud
         </ListLink>
       </List>
     </Page>
