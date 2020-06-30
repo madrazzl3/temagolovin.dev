@@ -1,15 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import Page from "../components/Page";
-import { Link } from "react-router-dom";
+import { Link } from "../components/List";
 
 const GHCard = styled.div`
   background-color: #171717;
   height: auto;
-  width: 100%;
   box-shadow: 1px 1px 25px #00000063;
   padding: 16px;
   border-radius: 4px;
+
+  a {
+    text-decoration: underline;
+    padding: 0;
+  }
 
   &:not(:last-child) {
     margin-bottom: 15px;
@@ -20,7 +24,7 @@ function Card({ title, children, to }) {
   return (
     <GHCard>
       <h3>
-        <a href={to}>{title}</a>
+        <Link to={to}>{title}</Link>
       </h3>
       <p>{children}</p>
     </GHCard>
@@ -33,12 +37,17 @@ const Container = styled.div`
   margin: 15px auto;
 `;
 
-const gh = (name) => `http://github.com/awave1/${name}`;
+const gh = (name = "") => `http://github.com/awave1/${name}`;
 
 export default function WorkPage() {
   return (
     <Page>
       <h1>Work</h1>
+      <p>
+        You can find all of my work on my <Link to={gh()}>GitHub</Link>, but
+        here are some of my favorite projects that I've worked on
+      </p>
+
       <Container>
         <Card title="jay - compiler project" to={gh("jay")}>
           CPSC 411, University of Calgary Compiler Design term project. Designed
@@ -58,12 +67,17 @@ export default function WorkPage() {
           to={gh("carbonfootprint-frontend")}
         >
           A project developed during{" "}
-          <a href="https://code-the-change-yyc-19.devpost.com/">
+          <Link to="https://code-the-change-yyc-19.devpost.com/">
             CodeTheChange YYC
-          </a>{" "}
+          </Link>{" "}
           Hackathon. It's a footprint tracker that lets you calculate potential
           amount of carbon that you would emit when planning a trip. The project
           was written using React Native &amp; Node.js.
+        </Card>
+        <Card title="Droider" to={gh("Droider")}>
+          One of my first Android projects. It's a mobile client for a Russian
+          tech blog <Link href="http://droider.ru/">Droider.ru</Link>. This
+          project made me more interested in Android and Frontend development.
         </Card>
       </Container>
     </Page>

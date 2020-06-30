@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { WaveEmoji } from "./Waves";
 import { List, ListLink, Link } from "./List";
 
@@ -42,6 +44,9 @@ export function Toolbar() {
           </ListLink>
           <ListLink useRouter to="/work">
             Work
+          </ListLink>
+          <ListLink to="https://github.com/awave1">
+            <FontAwesomeIcon icon={faGithub} />
           </ListLink>
         </NavLinks>
       </Nav>

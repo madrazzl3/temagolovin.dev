@@ -36,7 +36,7 @@ const List = styled.ul`
   margin: 0;
 `;
 
-function Link({ to, children, useRouter, className }) {
+function Link({ to, children, useRouter, className, style }) {
   if (useRouter) {
     return (
       <ARouter to={to} className={className}>
@@ -46,7 +46,13 @@ function Link({ to, children, useRouter, className }) {
   }
 
   return (
-    <A href={to} className={className}>
+    <A
+      href={to}
+      className={className}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={style}
+    >
       {children}
     </A>
   );
